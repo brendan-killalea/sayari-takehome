@@ -9,6 +9,7 @@ The scope is designed to take around 4-5 hours to complete; please plan the task
 
 ## Overview
 
+<img width="1774" height="925" alt="Screenshot 2025-08-20 at 11 51 08 AM" src="https://github.com/user-attachments/assets/24e92ebe-d7c0-4386-be8a-7e30b9dcedc0" />
 
 This is an example real-time business transaction monitoring application that visualizes financial transactions between businesses. The application displays transaction data in both tabular and graph formats, providing insights into business relationships and transaction patterns.
 
