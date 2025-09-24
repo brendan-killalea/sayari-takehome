@@ -1,0 +1,17 @@
+{
+  "name": "transactionsimulator",
+  "version": "1.0.0",
+  "description": "Run to generate simulated transactions in the main application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
+    "axios": "^1.12.2"
+  }
+}
