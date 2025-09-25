@@ -1,0 +1,10 @@
+# Default settings for all files
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+
+# Override for TSX files
+[*.tsx]
+indent_size = 2
