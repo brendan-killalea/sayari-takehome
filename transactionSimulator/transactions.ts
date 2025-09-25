@@ -11,12 +11,12 @@ interface Business {
 
 export async function runSimulator(numTransactions: number, maxAmount: number, interval: number) {
     do {
-        runTransactions(numTransactions, maxAmount);
+        processTransactions(numTransactions, maxAmount);
         await new Promise(r => setTimeout(r, 1000 * interval));
     } while (interval > 0)
 }
 
-async function runTransactions(numTransactions: number, maxAmount: number) {
+async function processTransactions(numTransactions: number, maxAmount: number) {
     // Get existing businesses
     let businessIds: string[] = []
     try {
@@ -30,12 +30,12 @@ async function runTransactions(numTransactions: number, maxAmount: number) {
     }
 
     // Create random transactions
-    createTransactions(businessIds, numTransactions, maxAmount)
+    postTransactions(businessIds, numTransactions, maxAmount)
         .then(() => console.log(`Created ${numTransactions} transactions`))
         .catch(error => console.error("Failed while creating transactions:", error));
 }
 
-function createTransactions(businessIds: string[], count: number, maxAmount: number) {
+function postTransactions(businessIds: string[], count: number, maxAmount: number) {
     const requests: Promise<AxiosResponse>[] = [];
     for (let i = 0; i < count; ++i) {
         let from = getRandomInt(businessIds.length);
