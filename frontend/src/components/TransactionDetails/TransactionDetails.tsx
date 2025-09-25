@@ -218,14 +218,20 @@ const TransactionDetailsTable = () => {
                 <input
                   type="datetime-local"
                   value={timeRange.start}
-                  onChange={(e) => setTimeRange(prev => ({...prev, start: e.target.value}))}
+                  onChange={(e) => {
+                    setTimeRange(prev => ({...prev, start: e.target.value}));
+                    setPage(0);
+                  }}
                   />
               </TableCell>
               <TableCell>
                 <input
                   type="datetime-local"
                   value={timeRange.end}
-                  onChange={(e) => setTimeRange(prev => ({...prev, end: e.target.value}))}
+                  onChange={(e) => {
+                    setTimeRange(prev => ({...prev, end: e.target.value}));
+                    setPage(0);
+                  }}
                 />
               </TableCell>
             </TableRow>
@@ -237,7 +243,10 @@ const TransactionDetailsTable = () => {
                 <input
                   type="text"
                   value={businessFromFilter}
-                  onChange={(e) => setBusinessFromFilter(e.target.value)}
+                  onChange={(e) => {
+                    setBusinessFromFilter(e.target.value);
+                    setPage(0);
+                  }}
                   placeholder="From business name"
                   style={{width: '100%'}}
                 />
@@ -246,7 +255,10 @@ const TransactionDetailsTable = () => {
                 <input
                   type="text"
                   value={businessToFilter}
-                  onChange={(e) => setBusinessToFilter(e.target.value)}
+                  onChange={(e) => {
+                    setBusinessToFilter(e.target.value);
+                    setPage(0);
+                  }}
                   placeholder="To business name"
                   style={{width: '100%'}}
                 />
@@ -260,7 +272,10 @@ const TransactionDetailsTable = () => {
                 <input
                   type="number"
                   value={amountRange.min}
-                  onChange={(e) => setAmountRange(prev => ({...prev, min: e.target.value}))}
+                  onChange={(e) => {
+                    setAmountRange(prev => ({...prev, min: e.target.value}));
+                    setPage(0);
+                  }}
                   placeholder="Min"
                   style={{width: '100%'}}
                 />
@@ -269,7 +284,10 @@ const TransactionDetailsTable = () => {
                 <input
                   type="number"
                   value={amountRange.max}
-                  onChange={(e) => setAmountRange(prev => ({...prev, max: e.target.value}))}
+                  onChange={(e) => {
+                    setAmountRange(prev => ({...prev, max: e.target.value}));
+                    setPage(0);
+                  }}
                   placeholder="Max"
                   style={{width: '100%'}}
                 />
